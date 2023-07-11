@@ -1,0 +1,298 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #212121;
+    padding: 10px;
+
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+
+
+        li {
+            margin: 0 10px;
+
+
+            a {
+                color: #fff;
+                text-decoration: none;
+                padding: 5px 10px;
+            }
+        }
+    }
+}
+
+
+/* Contenido principal */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Pie de Página */
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-icons {
+    margin-bottom: 20px;
+}
+
+.footer-icons h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-icons ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icons li {
+    margin-right: 10px;
+}
+
+.footer-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+footer p {
+    margin: 10px 0;
+    color: #f2f2f2;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Galería de Fotos */
+.galeria {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 430px;
+}
+
+.imagen-superpuesta {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    max-width: 25%;
+
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        transition: transform 0.5s ease;
+    }
+}
+
+.imagen-superpuesta:hover img {
+    transform: scale(1.2);
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 0;
+    background-color: #000000;
+    transition: opacity 0.3s ease;
+}
+
+.imagen-superpuesta:hover .texto-superpuesto {
+    opacity: 1;
+}
+
+/* La Banda */
+/* Responsive */
+@media (max-width: 768px) {
+header {
+    text-align: center;
+
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+    .galeria {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .member-container {
+        position: relative;
+        text-align: center;
+    }
+
+    .member-container img {
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }      
+
+    .member-container p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        color: #ccc;
+        background-color: rgba(0, 0, 0, 0.7);
+        margin: 0;
+        z-index: 2;
+    }
+}
+
+/* Discografia */
+
+.list-container{
+    display: flexbox;
+}
+
+.photo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.description {
+    text-align: justify;
+}
+
+
+/* Tienda */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 20px;
+}
+
+.item {
+    text-align: center;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+}
+
+.item h2,
+.item p {
+    margin: 10px 0;
+}
+
+.item button {
+    padding: 10px 20px;
+    background-color: #212121;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.item button:hover {
+    background-color: #000000;
+}
+
+/* Contacto */
+.image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-form {
+    text-align: center;
+    margin-top: 100px;
+    color: #ccc;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #212121;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #000000;
+}
